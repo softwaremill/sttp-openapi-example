@@ -1,1 +1,0 @@
-# sttp-openapi example
