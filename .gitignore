@@ -1,2 +1,4 @@
-generated
+.openapi-generator
+.openapi-generator-ignore
 target
+petstore-api/src
