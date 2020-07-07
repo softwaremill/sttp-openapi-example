@@ -6,9 +6,8 @@ scalaVersion := "2.13.2"
 
 val root = file(".")
 
-val petstoreApiDir = "petstore-api"
 lazy val petstoreApi = project
-  .in(file(petstoreApiDir))
+  .in(file("petstore-api"))
   .settings(
     openApiInputSpec := s"${baseDirectory.value.getPath}/petstore.yaml",
     openApiGeneratorName := "scala-sttp",
