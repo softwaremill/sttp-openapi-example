@@ -4,15 +4,13 @@ version := "0.1"
 
 scalaVersion := "2.13.2"
 
-val root = file(".")
-
-lazy val petstoreApi = project
+lazy val petstoreApi: Project = project
   .in(file("petstore-api"))
   .settings(
     openApiInputSpec := s"${baseDirectory.value.getPath}/petstore.yaml",
     openApiGeneratorName := "scala-sttp",
     openApiOutputDir := baseDirectory.value.name,
-    openApiIgnoreFileOverride := s"$root/openapi-ignore-file",
+    openApiIgnoreFileOverride := s"${baseDirectory.in(ThisBuild).value.getPath}/openapi-ignore-file",
     libraryDependencies ++= Seq(
       "com.softwaremill.sttp.client" %% "core" % "2.2.0",
       "com.softwaremill.sttp.client" %% "json4s" % "2.2.0",
@@ -27,5 +25,5 @@ lazy val core = project
   .dependsOn(petstoreApi)
 
 lazy val rootProject = project
-  .in(root)
+  .in(file("."))
   .aggregate(petstoreApi, core)
