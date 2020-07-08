@@ -10,6 +10,7 @@ lazy val petstoreApi: Project = project
     openApiInputSpec := s"${baseDirectory.value.getPath}/petstore.yaml",
     openApiGeneratorName := "scala-sttp",
     openApiOutputDir := baseDirectory.value.name,
+    //Below setting is needed to configure generator not to generate other files besides src/main/scala
     openApiIgnoreFileOverride := s"${baseDirectory.in(ThisBuild).value.getPath}/openapi-ignore-file",
     libraryDependencies ++= Seq(
       "com.softwaremill.sttp.client" %% "core" % "2.2.0",
