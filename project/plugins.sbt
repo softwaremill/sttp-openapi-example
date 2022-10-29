@@ -1,1 +1,1 @@
-addSbtPlugin("org.openapitools" % "sbt-openapi-generator" % "4.3.1")
+addSbtPlugin("org.openapitools" % "sbt-openapi-generator" % "5.3.0")

@@ -1,8 +1,8 @@
 name := "sttp-openapi-generator-example"
 
-version := "0.1"
+version := "1.0"
 
-scalaVersion := "2.13.2"
+scalaVersion := "2.13.10"
 
 lazy val petstoreApi: Project = project
   .in(file("petstore-api"))
@@ -15,9 +15,9 @@ lazy val petstoreApi: Project = project
     //Below setting is needed to configure generator not to generate other files besides src/main/scala
     openApiIgnoreFileOverride := s"${baseDirectory.in(ThisBuild).value.getPath}/openapi-ignore-file",
     libraryDependencies ++= Seq(
-      "com.softwaremill.sttp.client" %% "core" % "2.2.0",
-      "com.softwaremill.sttp.client" %% "json4s" % "2.2.0",
-      "org.json4s" %% "json4s-jackson" % "3.6.8"
+      "com.softwaremill.sttp.client3" %% "core" % "3.8.3",
+      "com.softwaremill.sttp.client3" %% "json4s" % "3.8.3",
+      "org.json4s" %% "json4s-jackson" % "4.0.6"
     ),
     //We can't use sourceGenerators because this requires all files to compile and openapi-generator generates
     //some additional metadata files which breaks compilation.
