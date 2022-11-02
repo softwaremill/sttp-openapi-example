@@ -1,4 +1,4 @@
 # sttp-openapi example
 
 
-Demo repository of how to setup stto-openapi-generator with sbt-project
+Demo repository of how to set up sttp-openapi-generator with sbt-project

@@ -2,3 +2,4 @@
 .openapi-generator-ignore
 target
 petstore-api/src
+.idea
